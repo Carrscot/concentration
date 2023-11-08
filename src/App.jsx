@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Button from './Button'
-import InputField from './InputField'
 import StartPage from './StartPage';
+import Header from './Header';
 
 function App() {
   return (
     <>
+      <Header />
       <StartPage />
     </>
   )
