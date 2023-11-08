@@ -11,7 +11,7 @@ const Header = () => {
         <Button
             onClick={exitGame}
             buttonText= "Exit Game"
-            buttonClass="exit align-right"
+            buttonClass="exit"
             id="exit" 
         />        
         </div>
