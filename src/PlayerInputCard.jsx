@@ -10,7 +10,7 @@ const PlayerCard = (props) => {
         src} = props;
 
     return (
-        <div className="playerCard">
+        <div className="playerInputCard">
         <img 
             src={src} 
             alt={player} 
