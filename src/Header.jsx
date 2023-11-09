@@ -15,7 +15,7 @@ const Header = () => {
                     buttonText= "Exit Game"
                     buttonClass="exit"
                     id="exit" 
-                /> 
+                />
         </div>
                
         </div>
