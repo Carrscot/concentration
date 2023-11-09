@@ -1,9 +1,7 @@
-const Card = () => {
+const Card = ({src, onClick, className}) => {
     return (
         <>
-        <div className="card">
-
-        </div>
+        <img className={className} src={src} onClick={onClick} />
         </>
     )
 }
