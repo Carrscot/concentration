@@ -1,10 +1,15 @@
 import InputField from "./InputField"
 
 const PlayerCard = (props) => {
-    const {player, onInfoChange, type, id, placeholder, value} = props
+    const {player, onInfoChange, id, placeholder, value, src} = props
     return (
         <div className="playerCard">
-        <h1>{player}</h1>
+        <img 
+            src={src} 
+            alt={player} 
+            id={id} 
+            className="playerImage"/>
+
         <InputField 
             onInfoChange={onInfoChange} 
             type="text"

@@ -1,12 +1,23 @@
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  background-image: url("assets/backgroundImage.png");
+  background-size: 100%;
+  color: white;
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 33% 33% 33%; 
   align-items: center;
-  justify-content: center;
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.gameButtons {
+  justify-self: end;
 }
 
 .align-right {
@@ -18,6 +29,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 5%;
 }
 
 .playerCards {
@@ -34,6 +46,35 @@ body {
   margin: 10%;
 }
 
+.playerImage {
+  height: 200px;
+  width: auto;
+  margin: 30px;
+}
+
+input {
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  margin: 5px;
+}
 
 /* Buttons */
 button {
@@ -62,6 +103,11 @@ button {
   margin: 5px;
 }
 
+button:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(255, 255, 255, 0.66) 0 3px 5px -1px,rgba(255, 255, 255, 0.54) 0 6px 10px 0,rgba(252, 252, 252, 0.562) 0 1px 18px 0;
+}
+
 .exit {
   color: white;
   background-color: red;
@@ -70,4 +116,6 @@ button {
 .start {
   color: White;
   background-color: green;
+  font-size: 24px;
+  padding: 5px 50px;
 }

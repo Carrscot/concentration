@@ -3,10 +3,11 @@ import './App.css'
 import Button from './Button'
 import InputField from './InputField'
 import PlayerCard from './PlayerCard';
+import player1Image from './assets/player1Image.png'
+import player2Image from './assets/player2Image.png'
 
 function StartPage(props) {
     const {setPlayer1, setPlayer2, player1, player2} = props
-    const [testState, setTestState] = useState('Test');
     let player1Name;
     let player2Name;
 
@@ -33,25 +34,28 @@ function StartPage(props) {
     }
     return (
         <div className='startPage'>
+        <h2>Are you ready to play?</h2>
         <div className='playerCards'>
 
-            <PlayerCard 
+            <PlayerCard
+            src={player1Image}
+            id="player1" 
             player="P1" 
-            placeholder="palceholder1"
+            placeholder="Enter Player 1 Name"
             onInfoChange={handlePlayer1Change}/>
 
             <PlayerCard 
+            src={player2Image}
+            id="player2" 
             player="P2" 
-            placeholder="palceholder2"
+            placeholder="Enter Player 1 Name"
             onInfoChange={handlePlayer2Change}/>
         </div>
-        <Button 
-        onClick={onStartClick}
-        buttonText= "Let's Play"
-        buttonClass="start"
-        id="start"/>
-        <p>{player1}</p>
-        <p>{player2}</p>
+            <Button 
+            onClick={onStartClick}
+            buttonText= "Let's Play"
+            buttonClass="start"
+            id="start"/>
         </div>
     )
 }
