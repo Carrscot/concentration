@@ -3,13 +3,7 @@ import Card from "./Card"
 import cardInfo from "./assets/cardInfo.json"
 
 const GameBoard = () => {
-    const  [isFlipped, setFlipped] = useState(false);
-    const handleFlip = () => {
-        setFlipped(!isFlipped);
-    } 
-    const handleFlipClass = () => {
-        return ;
-    }
+
     let cards = [];
     let shuffledCards;
 
@@ -25,7 +19,7 @@ const GameBoard = () => {
     shuffle(cardInfo);
 
     for (let i=0; i<shuffledCards.length; i++) {
-        cards.push(<Card className="card" key={i} src={shuffledCards[i].image} onClick={handleFlip}/>)
+        cards.push(<Card className="card" key={i} src={shuffledCards[i].image} />)
         console.log()
     }
     return (
