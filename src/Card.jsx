@@ -1,16 +1,17 @@
-const Card = ({src, onClick, className}) => {
+import cardBack from "./assets/cardBack.png"
+
+const Card = ({src, onClick, flipped, id}) => {
     return (
         <>
-        <img className={className} src={src} onClick={onClick} />
+            <div className="card">
+            <div className={flipped ? "flipped" : ""}>
+                <img className="front" src={src} alt="card front" id={id}/>
+                <img className="back" src={cardBack} onClick={onClick} alt="card back" id={id}/>
+            </div>
+            </div>
         </>
     )
 }
 
 export default Card
 
-{/* <div className="card">
-<div className={flipped ? "flipped" : ""}>
-    <img className="front" src={src} alt="card front"/>
-    <img className="back" src={cardBack} onClick={()=>{console.log("handleClick")}} alt="card back"/>
-</div>
-</div> */}
