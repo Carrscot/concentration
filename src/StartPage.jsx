@@ -10,7 +10,8 @@ function StartPage(props) {
         setPlayer1, 
         setPlayer2, 
         player1, 
-        player2} = props;
+        player2,
+        setGameState} = props;
     let player1Name;
     let player2Name;
 
@@ -19,21 +20,15 @@ function StartPage(props) {
             console.log("please enter names for both palyers");
         }
         else {
-            setPlayer1(player1Name);
-            setPlayer2(player2Name);
-            console.log("player names updated player1: ", player1, "player 2: ", player2);
+            setGameState("In Progress")
         }
     }
 
     function handlePlayer1Change (e) {
         setPlayer1(e.target.value);
-        player1Name = e.target.value;
-        console.log("player1 change ", player1Name);
     }
     function handlePlayer2Change (e) {
         setPlayer2(e.target.value);
-        player2Name = e.target.value;
-        console.log("player2 change", player2Name);
     }
     return (
         <div className='startPage'>

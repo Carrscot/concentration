@@ -42,6 +42,7 @@ function App() {
         setChoiceOne={setChoiceOne}
         setChoiceTwo={setChoiceTwo}
         shuffle={shuffle}
+        setGameState={setGameState}
         gameState={gameState}
         />
 
@@ -53,6 +54,7 @@ function App() {
           setPlayer2={setPlayer2}
           player1={player1}
           player2={player2}
+          setGameState={setGameState}
           /> 
 
           :

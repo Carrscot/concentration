@@ -11,10 +11,14 @@ const Header = (props) => {
         setChoiceOne, 
         setChoiceTwo, 
         shuffle,
-        gameState} = props
+        gameState,
+        setGameState} = props
 
     function exitGame () {
-        console.log('hi :)')
+        setGameState("Start");
+        restartGame();
+        setPlayer1('');
+        setPlayer2('');
     }
 
     function restartGame () {
@@ -51,9 +55,7 @@ const Header = (props) => {
                     buttonClass="exit"
                     id="exit" 
                 />
- 
-        </div>
-               
+            </div>
         </div>
     )
 }
