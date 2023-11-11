@@ -5,38 +5,47 @@ const GameBoard = (props) => {
     const {choiceOne, choiceTwo, setChoiceOne, setChoiceTwo, shuffledCards} = props;
     const [matched, setMatched] = useState(false);
 
+    function getCardColor(card) {
+        const cardSplit = card.split('');
+        const colors = {
+            'H' : 'red',
+            'D' : 'red',
+            'S' : 'black',
+            'C' : 'black'
+        };
+        return colors[cardSplit[1]] || '';
+    }
+
+    function getCardNumber(card) {
+        const cardSplit = card.split('');
+        return cardSplit[0];
+    }
 
     const handleChoice = (e) => {
-        const cardSplit = e.target.id.split('');
-        let cardChoice;
-        if (cardSplit[1] ==='S' || cardSplit[1] ==='C') {
-            cardChoice = cardSplit[0] + 'black';
-            console.log(cardChoice)
-        }
-        else if (cardSplit[1] ==='D' || cardSplit[1] ==='H') {
-            cardChoice = cardSplit[0] + 'red';
-        }
-        choiceOne ? setChoiceTwo(cardChoice) : setChoiceOne(cardChoice)
-        
+        choiceOne ? setChoiceTwo(e.target.id) : setChoiceOne(e.target.id);       
     } 
+
+    const resetTurn = () => {
+        setChoiceOne(null);
+        setChoiceTwo(null);
+
+    }
 
     useEffect(() => {
         if(choiceOne && choiceTwo) {
-            if(choiceOne === choiceTwo) {
+            const colorOne = getCardColor(choiceOne);
+            const colorTwo = getCardColor(choiceTwo);
+            const numberOne = getCardNumber(choiceOne);
+            const numberTwo = getCardNumber(choiceTwo);
+            if(colorOne === colorTwo && numberOne === numberTwo) {
                 console.log('Cards match')
                 setMatched(true);
             } else {
-                console.log("cards don't match")
-                resetTurn()
+                console.log("cards don't match");
+                setTimeout(()=>resetTurn(), 1000);
             }
         }
     }, [choiceOne, choiceTwo])
-
-    const resetTurn = () => {
-        setChoiceOne(null)
-        setChoiceTwo(null)
-
-    }
 
     return (
         <>
@@ -47,8 +56,8 @@ const GameBoard = (props) => {
                 key={card.code} 
                 src={card.image} 
                 onClick={handleChoice} 
-                id={card.abbreviation}
-                flipped={card.abbreviation === choiceOne || card.abbreviation  === choiceTwo || matched === true}/>
+                id={card.code}
+                flipped={card.code === choiceOne || card.code === choiceTwo}/>
             ))}
         </div>
         </>
