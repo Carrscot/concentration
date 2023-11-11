@@ -32,7 +32,15 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header 
+      setPlayerTurn={setPlayerTurn}
+      setPlayer1= {setPlayer1} 
+      setPlayer2={setPlayer2}
+      setPlayer1Score= {setPlayer1Score} 
+      setPlayer2Score={setPlayer2Score}
+      setChoiceOne={setChoiceOne}
+      setChoiceTwo={setChoiceTwo}
+      shuffle={shuffle}/>
       <MainGame
         playerTurn={playerTurn}
         setPlayerTurn={setPlayerTurn}

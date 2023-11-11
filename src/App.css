@@ -236,3 +236,8 @@ button:hover {
   font-size: 24px;
   padding: 5px 50px;
 }
+
+.restart {
+  color: White;
+  background-color: rgb(255, 191, 0);
+}
