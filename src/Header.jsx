@@ -10,7 +10,8 @@ const Header = (props) => {
         setPlayer2Score, 
         setChoiceOne, 
         setChoiceTwo, 
-        shuffle} = props
+        shuffle,
+        gameState} = props
 
     function exitGame () {
         console.log('hi :)')
@@ -30,12 +31,20 @@ const Header = (props) => {
             <div></div>
             <h1>Concentration</h1>
             <div className="gameButtons">
-                <Button
+                {
+                    gameState === 'Start' ?
+                    <div></div>
+
+                    :
+
+                    <Button
                     onClick={restartGame}
                     buttonText= "Restart Game"
                     buttonClass="restart"
-                    id="restart" 
-                />
+                    id="restart"/>
+
+                }
+
                 <Button
                     onClick={exitGame}
                     buttonText= "Exit Game"
