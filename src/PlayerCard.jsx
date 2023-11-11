@@ -3,14 +3,14 @@ const PlayerCard = (props) => {
     playerTurn, 
     src, 
     player, 
-    score, 
+    playerScore, 
     id } = props;
   return (
     <div className="playerCardContainer">
       <div className="playerCard">
         <img src={src} alt={player} id={id} className="playerImage" />
         <p className="bold large-text">{player}</p>
-        <p className="bold large-text">Score: {score}</p>
+        <p className="bold large-text">Score: {playerScore}</p>
       </div>
       <div className={playerTurn ? "turnBox" : "hide"}>It's Your Turn!</div>
     </div>

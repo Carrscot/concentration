@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card"
 
 const GameBoard = (props) => {
@@ -9,8 +9,12 @@ const GameBoard = (props) => {
         choiceTwo, 
         setChoiceOne, 
         setChoiceTwo, 
-        shuffledCards} = props;
-    const [matched, setMatched] = useState(false);
+        shuffledCards,
+        player1Score,
+        player2Score,
+        setPlayer1Score,
+        setPlayer2Score,
+        setCards} = props;
 
     function getCardColor(card) {
         const cardSplit = card.split('');
@@ -29,7 +33,7 @@ const GameBoard = (props) => {
     }
 
     const handleChoice = (e) => {
-        choiceOne ? setChoiceTwo(e.target.id) : setChoiceOne(e.target.id);       
+        choiceOne ? setChoiceTwo(e.target.id) : setChoiceOne(e.target.id);      
     } 
 
     const changePlayer = ()=> {
@@ -39,6 +43,17 @@ const GameBoard = (props) => {
         else{
             setPlayerTurn(1);
         }
+    }
+
+    const incrementPlayerScore = () => {
+            if(playerTurn===1){
+                setPlayer1Score(player1Score + 1);
+                resetTurn();
+            }
+            else if(playerTurn===2){
+                setPlayer2Score(player2Score + 1);
+                resetTurn();
+            }
     }
 
     const resetTurn = () => {
@@ -55,7 +70,18 @@ const GameBoard = (props) => {
             const numberTwo = getCardNumber(choiceTwo);
             if(colorOne === colorTwo && numberOne === numberTwo) {
                 console.log('Cards match')
-                setMatched(true);
+                incrementPlayerScore();
+                
+                setCards(prevCards => {
+                    return prevCards.map(card => {
+                        if(card.code === choiceOne || card.code === choiceTwo) {
+                            return {...card, matched:true}
+                        } else {
+                            return card
+                        }
+                    })
+                })
+
             } else {
                 console.log("cards don't match");
                 setTimeout(()=>resetTurn(), 1000);
@@ -67,13 +93,13 @@ const GameBoard = (props) => {
         <>
         <div className="gameBoard">
             {shuffledCards.map(card => (
-                <Card 
-                className="card" 
+                <Card  
                 key={card.code} 
                 src={card.image} 
                 onClick={handleChoice} 
                 id={card.code}
-                flipped={card.code === choiceOne || card.code === choiceTwo}/>
+                flipped={card.code === choiceOne || card.code === choiceTwo}
+                matched={card.matched === true}/>
             ))}
         </div>
         </>

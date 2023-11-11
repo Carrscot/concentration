@@ -9,6 +9,8 @@ function App() {
   const [player1, setPlayer1] = useState('Jim');
   const [player2, setPlayer2] = useState('Sally');
   const [playerTurn, setPlayerTurn] = useState(1);
+  const [player1Score, setPlayer1Score] = useState(0);
+  const [player2Score, setPlayer2Score] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [cards, setCards] = useState(cardInfo);
@@ -32,15 +34,20 @@ function App() {
     <>
       <Header />
       <MainGame
-      playerTurn={playerTurn}
-      setPlayerTurn={setPlayerTurn}
-      player1= {player1} 
-      player2={player2}
-      choiceOne={choiceOne}
-      choiceTwo={choiceTwo}
-      setChoiceOne={setChoiceOne}
-      setChoiceTwo={setChoiceTwo}
-      shuffledCards={cards}/>
+        playerTurn={playerTurn}
+        setPlayerTurn={setPlayerTurn}
+        player1= {player1} 
+        player2={player2}
+        player1Score= {player1Score} 
+        player2Score={player2Score}
+        setPlayer1Score= {setPlayer1Score} 
+        setPlayer2Score={setPlayer2Score}
+        choiceOne={choiceOne}
+        choiceTwo={choiceTwo}
+        setChoiceOne={setChoiceOne}
+        setChoiceTwo={setChoiceTwo}
+        shuffledCards={cards}
+        setCards={setCards}/>
       {/* <StartPage 
       setPlayer1={setPlayer1}
       setPlayer2={setPlayer2}
