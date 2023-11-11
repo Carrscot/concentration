@@ -1,5 +1,6 @@
 const PlayerCard = (props) => {
-  const { 
+  const {
+    playerTurn, 
     src, 
     player, 
     score, 
@@ -11,7 +12,7 @@ const PlayerCard = (props) => {
         <p className="bold large-text">{player}</p>
         <p className="bold large-text">Score: {score}</p>
       </div>
-      <div className="turnBox">It's Your Turn!</div>
+      <div className={playerTurn ? "turnBox" : "hide"}>It's Your Turn!</div>
     </div>
   );
 };

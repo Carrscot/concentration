@@ -2,7 +2,14 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import Card from "./Card"
 
 const GameBoard = (props) => {
-    const {choiceOne, choiceTwo, setChoiceOne, setChoiceTwo, shuffledCards} = props;
+    const {
+        playerTurn, 
+        setPlayerTurn, 
+        choiceOne, 
+        choiceTwo, 
+        setChoiceOne, 
+        setChoiceTwo, 
+        shuffledCards} = props;
     const [matched, setMatched] = useState(false);
 
     function getCardColor(card) {
@@ -25,10 +32,19 @@ const GameBoard = (props) => {
         choiceOne ? setChoiceTwo(e.target.id) : setChoiceOne(e.target.id);       
     } 
 
+    const changePlayer = ()=> {
+        if(playerTurn===1){
+            setPlayerTurn(2);
+        }
+        else{
+            setPlayerTurn(1);
+        }
+    }
+
     const resetTurn = () => {
+        changePlayer();
         setChoiceOne(null);
         setChoiceTwo(null);
-
     }
 
     useEffect(() => {

@@ -82,6 +82,10 @@ body {
   height: 25px;
 }
 
+.hide {
+  display: none;
+}
+
 .inactivePlayer {
   display: none;
 }
@@ -129,6 +133,7 @@ input{
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
 }
 
+/* Cards */
 .card{
   position: relative;
   height: 15%;
@@ -142,6 +147,7 @@ input{
   height: 100%;
   width: 100%;
 }
+
 
 .card .front {
   height: 100%;
@@ -170,6 +176,7 @@ input{
   transform: scale(1.05);
   box-shadow: rgba(255, 255, 255, 0.66) 0 3px 5px -1px,rgba(255, 255, 255, 0.54) 0 6px 10px 0,rgba(252, 252, 252, 0.562) 0 1px 18px 0;
 }
+/* Cards */
 
 /* Text And Headers */
 h1 {

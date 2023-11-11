@@ -8,7 +8,7 @@ import cardInfo from "./assets/cardInfo.json"
 function App() {
   const [player1, setPlayer1] = useState('Jim');
   const [player2, setPlayer2] = useState('Sally');
-  const [turns, setTurns] = useState(0);
+  const [playerTurn, setPlayerTurn] = useState(1);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [cards, setCards] = useState(cardInfo);
@@ -32,6 +32,8 @@ function App() {
     <>
       <Header />
       <MainGame
+      playerTurn={playerTurn}
+      setPlayerTurn={setPlayerTurn}
       player1= {player1} 
       player2={player2}
       choiceOne={choiceOne}
