@@ -18,6 +18,7 @@ const MainGame = (props) => {
         choiceTwo, 
         setChoiceOne, 
         setChoiceTwo, 
+        shuffle,
         shuffledCards,
         setCards,
         player1Score,
@@ -53,12 +54,14 @@ const MainGame = (props) => {
                     src={winner === player1 ? player1Image : player2Image} 
                     winnerName={winner === player1 ? player1 : player2} 
                     winnerScore={winner === player1 ? player1Score : player2Score}
-                    place="1st"/>
+                    place="1st"
+                    className="trophy"/>
                 <EndGameCard 
                     src={winner != player1 ? player1Image : player2Image} 
                     winnerName={winner != player1 ? player1 : player2} 
                     winnerScore={winner != player1 ? player1Score : player2Score}
-                    place="2nd"/>
+                    place="2nd"
+                    className="trophy hide"/>
                 <Button
                     onClick={newGame}
                     buttonText= "Play Again"

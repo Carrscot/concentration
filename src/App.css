@@ -154,14 +154,24 @@ input{
   background-color: #ffffffbd;
   border-radius: 14px;
   border-style: none;
-  max-height: 10%;
-  width: 40%;
   padding: 1%;
   margin: 1%;
 }
 
+.endGameCardContainer {
+  display: flex;
+  align-items: center;
+  max-height: 10%;
+  width: 40%;
+}
+
 .playerWinImage {
   width: 10%;
+}
+
+.trophy {
+  width: 9%;
+  height: 7%;
 }
 
 /* Cards */

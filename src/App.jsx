@@ -75,6 +75,7 @@ function App() {
             choiceTwo={choiceTwo}
             setChoiceOne={setChoiceOne}
             setChoiceTwo={setChoiceTwo}
+            shuffle={shuffle}
             shuffledCards={cards}
             setCards={setCards}
             gameState={gameState}
