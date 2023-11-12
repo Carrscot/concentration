@@ -2,7 +2,7 @@
   "name": "concentration",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://Carrscot.github.io/concentration",
+  "homepage": "https://carrscot.github.io/concentration",
   "type": "module",
   "scripts": {
     "dev": "vite",
