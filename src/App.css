@@ -11,6 +11,7 @@ body {
   grid-template-columns: 33% 33% 33%; 
   align-items: center;
   height: 10vh;
+  margin: 0;
 }
 
 
@@ -86,7 +87,7 @@ body {
   visibility: hidden;
 }
 
-.inactivePlayer {
+.inactive {
   display: none;
 }
 
@@ -117,8 +118,15 @@ input{
 .mainGame {
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 90vh;
+}
+
+.winBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 2%;
 }
 
 .gameBoard {
@@ -131,6 +139,29 @@ input{
   border-radius: 14px;
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+}
+
+.winImage {
+  height: 10%;
+  width: 20%;
+}
+
+.endGameCard {
+  color: rgb(3, 3, 191);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffffbd;
+  border-radius: 14px;
+  border-style: none;
+  max-height: 10%;
+  width: 40%;
+  padding: 1%;
+  margin: 1%;
+}
+
+.playerWinImage {
+  width: 10%;
 }
 
 /* Cards */
@@ -183,7 +214,11 @@ h1 {
 }
 
 .bold{
-  font-weight: 500;
+  font-weight: 700;
+}
+
+.bolder {
+  font-weight: 900;
 }
 
 .large-text {
@@ -238,4 +273,10 @@ button:hover {
 .restart {
   color: White;
   background-color: rgb(255, 191, 0);
+}
+
+.newGame {
+  color: rgb(3, 3, 191);
+  background-color: rgb(158, 203, 249);
+  padding: 5px 50px;
 }

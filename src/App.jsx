@@ -9,12 +9,13 @@ function App() {
   const [player1, setPlayer1] = useState('Jim');
   const [player2, setPlayer2] = useState('Sally');
   const [playerTurn, setPlayerTurn] = useState(1);
-  const [player1Score, setPlayer1Score] = useState(0);
-  const [player2Score, setPlayer2Score] = useState(0);
+  const [player1Score, setPlayer1Score] = useState(12);
+  const [player2Score, setPlayer2Score] = useState(10);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [cards, setCards] = useState(cardInfo);
-  const [gameState, setGameState] = useState('Start')
+  const [gameState, setGameState] = useState('End');
+  const [winner, setWinner] = useState(player1);
 
   const shuffle = (array) => {
       const shuffledCards = [...array];
@@ -62,6 +63,8 @@ function App() {
           <MainGame
             playerTurn={playerTurn}
             setPlayerTurn={setPlayerTurn}
+            setPlayer1={setPlayer1}
+            setPlayer2={setPlayer2}
             player1= {player1} 
             player2={player2}
             player1Score= {player1Score} 
@@ -73,7 +76,11 @@ function App() {
             setChoiceOne={setChoiceOne}
             setChoiceTwo={setChoiceTwo}
             shuffledCards={cards}
-            setCards={setCards}/>
+            setCards={setCards}
+            gameState={gameState}
+            setGameState={setGameState}
+            winner={winner}
+            setWinner={setWinner}/>
       }
     </>
   )

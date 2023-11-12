@@ -31,7 +31,7 @@ const Header = (props) => {
     }
 
     return (
-        <div className="header">
+        <div className={gameState === "End" ? "inactive" : "header"}>
             <div></div>
             <h1>Concentration</h1>
             <div className="gameButtons">
