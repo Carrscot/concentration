@@ -13,7 +13,6 @@ const EndGameCard = (props) => {
                     <p className="bold large-text">Score: {winnerScore}</p>
                 </div>
             </div>
-
         </>
     )
 }

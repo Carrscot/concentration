@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Card from "./Card"
 
 const GameBoard = (props) => {
     const {
-        playerTurn, 
+        playerTurn,
+        player1,
+        player2, 
         setPlayerTurn, 
         choiceOne, 
         choiceTwo, 
@@ -14,7 +16,9 @@ const GameBoard = (props) => {
         player2Score,
         setPlayer1Score,
         setPlayer2Score,
-        setCards} = props;
+        setCards,
+        setWinner,
+        setGameState} = props;
 
     function getCardColor(card) {
         const cardSplit = card.split('');
@@ -45,13 +49,33 @@ const GameBoard = (props) => {
         }
     }
 
+    const checkWinner = () => {
+        const totalScore = player1Score + player2Score;
+        console.log(totalScore);
+        if(totalScore === 27) {
+            if(player1Score > player2Score) {
+                setWinner(player1);
+                setGameState('End');
+            }
+            else {
+                setWinner(player2);
+                setGameState('End');
+            }
+        }
+        else {
+            return "No Winner"
+        }
+    }
+
     const incrementPlayerScore = () => {
             if(playerTurn===1){
                 setPlayer1Score(player1Score + 1);
+                //checkWinner();
                 resetTurn();
             }
             else if(playerTurn===2){
                 setPlayer2Score(player2Score + 1);
+                //checkWinner();
                 resetTurn();
             }
     }
@@ -88,6 +112,10 @@ const GameBoard = (props) => {
             }
         }
     }, [choiceOne, choiceTwo])
+
+    useEffect(()=> {
+        checkWinner()
+    }, [player1Score, player2Score])
 
     return (
         <>

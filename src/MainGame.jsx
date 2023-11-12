@@ -27,7 +27,8 @@ const MainGame = (props) => {
         setPlayer2Score,
         gameState,
         setGameState,
-        winner} = props;
+        winner,
+        setWinner} = props;
 
         function newGame () {
             setGameState("Start");
@@ -89,7 +90,11 @@ const MainGame = (props) => {
                     player1Score= {player1Score} 
                     player2Score={player2Score}
                     setPlayer1Score= {setPlayer1Score} 
-                    setPlayer2Score={setPlayer2Score}/>
+                    setPlayer2Score={setPlayer2Score}
+                    setWinner={setWinner}
+                    player1={player1}
+                    player2={player2}
+                    setGameState={setGameState}/>
                 <PlayerCard 
                     src={player2Image}
                     player={player2}
