@@ -192,16 +192,16 @@ input{
 /* Cards */
 .card{
   position: relative;
-  height: 10%;
-  width: 7%;
+  height: 17%;
+  width: 7.5%;
   margin: 0.75%;
   border-radius: 4px;
   border-style: none;
 }
 
 .back, .front{
-  height: 110%;
-  width: 105%;
+  height: 100%;
+  width: 100%;
 }
 
 .card .front {
