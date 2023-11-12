@@ -9,8 +9,8 @@ function App() {
   const [player1, setPlayer1] = useState('Jim');
   const [player2, setPlayer2] = useState('Sally');
   const [playerTurn, setPlayerTurn] = useState(1);
-  const [player1Score, setPlayer1Score] = useState(13);
-  const [player2Score, setPlayer2Score] = useState(13);
+  const [player1Score, setPlayer1Score] = useState(0);
+  const [player2Score, setPlayer2Score] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [cards, setCards] = useState(cardInfo);

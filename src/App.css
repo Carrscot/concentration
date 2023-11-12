@@ -175,6 +175,14 @@ input{
   height: 7%;
 }
 
+.matchImage {
+  height: 90%;
+  width: 60%;
+  margin: 3%;
+  transform: rotateY(0deg);
+  transition: all ease-in 0.2s;
+}
+
 /* Cards */
 .card{
   position: relative;
@@ -216,6 +224,8 @@ input{
   transform: scale(1.05);
   box-shadow: rgba(255, 255, 255, 0.66) 0 3px 5px -1px,rgba(255, 255, 255, 0.54) 0 6px 10px 0,rgba(252, 252, 252, 0.562) 0 1px 18px 0;
 }
+
+
 /* Cards */
 
 /* Text And Headers */

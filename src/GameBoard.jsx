@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card"
+import matched from "./assets/matched.png"
 
 const GameBoard = (props) => {
     const {
@@ -19,6 +20,8 @@ const GameBoard = (props) => {
         setCards,
         setWinner,
         setGameState} = props;
+
+    const [match, setMatch] = useState(false);
 
     function getCardColor(card) {
         const cardSplit = card.split('');
@@ -70,12 +73,10 @@ const GameBoard = (props) => {
     const incrementPlayerScore = () => {
             if(playerTurn===1){
                 setPlayer1Score(player1Score + 1);
-                //checkWinner();
                 resetTurn();
             }
             else if(playerTurn===2){
                 setPlayer2Score(player2Score + 1);
-                //checkWinner();
                 resetTurn();
             }
     }
@@ -114,12 +115,15 @@ const GameBoard = (props) => {
     }, [choiceOne, choiceTwo])
 
     useEffect(()=> {
-        checkWinner()
+        setMatch(true);
+        checkWinner();
+        setTimeout(() => setMatch(false), 1500);
     }, [player1Score, player2Score])
 
     return (
         <>
-        <div className="gameBoard">
+        <img className={match ? "matchImage" : "inactive"} src={matched} />
+        <div className={match ? "inactive" : "gameBoard"}>
             {shuffledCards.map(card => (
                 <Card  
                 key={card.code} 
