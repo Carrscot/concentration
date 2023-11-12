@@ -11,12 +11,12 @@ const InputField = (props) => {
     return (
         <>
             <input 
-            className={inputClass}
-            onChange={onInfoChange} 
-            type={type} 
-            id={id} 
-            placeholder={placeholder} 
-            value={value}/>
+                className={inputClass}
+                onChange={onInfoChange} 
+                type={type} 
+                id={id} 
+                placeholder={placeholder} 
+                value={value}/>
         </>
     )
 }

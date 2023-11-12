@@ -66,7 +66,7 @@ const GameBoard = (props) => {
             }
         }
         else {
-            return "No Winner"
+            return "No Winner";
         }
     }
 
@@ -94,7 +94,6 @@ const GameBoard = (props) => {
             const numberOne = getCardNumber(choiceOne);
             const numberTwo = getCardNumber(choiceTwo);
             if(colorOne === colorTwo && numberOne === numberTwo) {
-                console.log('Cards match')
                 incrementPlayerScore();
                 
                 setCards(prevCards => {
@@ -122,18 +121,18 @@ const GameBoard = (props) => {
 
     return (
         <>
-        <img className={match ? "matchImage" : "inactive"} src={matched} />
-        <div className={match ? "inactive" : "gameBoard"}>
-            {shuffledCards.map(card => (
-                <Card  
-                key={card.code} 
-                src={card.image} 
-                onClick={handleChoice} 
-                id={card.code}
-                flipped={card.code === choiceOne || card.code === choiceTwo}
-                matched={card.matched === true}/>
-            ))}
-        </div>
+            <img className={match ? "matchImage" : "inactive"} src={matched} />
+            <div className={match ? "inactive" : "gameBoard"}>
+                {shuffledCards.map(card => (
+                    <Card  
+                    key={card.code} 
+                    src={card.image} 
+                    onClick={handleChoice} 
+                    id={card.code}
+                    flipped={card.code === choiceOne || card.code === choiceTwo}
+                    matched={card.matched === true}/>
+                ))}
+            </div>
         </>
     )
 }

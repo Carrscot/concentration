@@ -1,7 +1,12 @@
 import trophy from './assets/trophy.png'
 
 const EndGameCard = (props) => {
-    const {src, winnerName, winnerScore, place, className} = props;
+    const {
+        src, 
+        winnerName, 
+        winnerScore, 
+        place, 
+        className} = props;
     return (
         <>
             <div className='endGameCardContainer'>

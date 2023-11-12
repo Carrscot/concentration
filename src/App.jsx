@@ -22,14 +22,14 @@ function App() {
       for (let i = shuffledCards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffledCards[i], shuffledCards[j]] = [shuffledCards[j], shuffledCards[i]];
-  }
-      setCards(shuffledCards);
-      console.log("shuflled");
+    }
+        setCards(shuffledCards);
+        console.log("shuflled");
 
-};
-  useEffect(() => {
-    shuffle(cardInfo);
-}, []);
+  };
+    useEffect(() => {
+      shuffle(cardInfo);
+  }, []);
 
 
   return (
@@ -53,35 +53,35 @@ function App() {
         <StartPage 
           setPlayer1={setPlayer1}
           setPlayer2={setPlayer2}
+          setGameState={setGameState}
           player1={player1}
           player2={player2}
-          setGameState={setGameState}
           /> 
 
           :
 
           <MainGame
-            playerTurn={playerTurn}
             setPlayerTurn={setPlayerTurn}
             setPlayer1={setPlayer1}
             setPlayer2={setPlayer2}
+            setChoiceOne={setChoiceOne}
+            setChoiceTwo={setChoiceTwo}
+            setPlayer1Score= {setPlayer1Score} 
+            setPlayer2Score={setPlayer2Score}
+            shuffle={shuffle}
+            setCards={setCards}
+            setGameState={setGameState}
+            setWinner={setWinner}
+            playerTurn={playerTurn}            
             player1= {player1} 
             player2={player2}
             player1Score= {player1Score} 
-            player2Score={player2Score}
-            setPlayer1Score= {setPlayer1Score} 
-            setPlayer2Score={setPlayer2Score}
+            player2Score={player2Score}            
             choiceOne={choiceOne}
-            choiceTwo={choiceTwo}
-            setChoiceOne={setChoiceOne}
-            setChoiceTwo={setChoiceTwo}
-            shuffle={shuffle}
-            shuffledCards={cards}
-            setCards={setCards}
+            choiceTwo={choiceTwo}              
+            shuffledCards={cards}        
             gameState={gameState}
-            setGameState={setGameState}
-            winner={winner}
-            setWinner={setWinner}/>
+            winner={winner}/>
       }
     </>
   )

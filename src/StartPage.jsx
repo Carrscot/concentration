@@ -12,6 +12,7 @@ function StartPage(props) {
         player1, 
         player2,
         setGameState} = props;
+
     const [nameCheck, setNameCheck] = useState(true);
 
     function onStartClick () {
@@ -33,30 +34,30 @@ function StartPage(props) {
     }
     return (
         <div className='startPage'>
-        <h2>Are you ready to play?</h2>
-        <div className='playerInputCards'>
+            <h2>Are you ready to play?</h2>
+            <div className='playerInputCards'>
 
-            <PlayerInputCard
-            inputClass={nameCheck && player1 === '' ? '' : 'warning'}
-            src={player1Image}
-            id="player1" 
-            player="P1" 
-            placeholder="Enter Player 1 Name"
-            onInfoChange={handlePlayer1Change}/>
+                <PlayerInputCard
+                    inputClass={nameCheck && player1 === '' ? '' : 'warning'}
+                    src={player1Image}
+                    id="player1" 
+                    player="P1" 
+                    placeholder="Enter Player 1 Name"
+                    onInfoChange={handlePlayer1Change}/>
 
-            <PlayerInputCard 
-            inputClass={nameCheck && player2 === '' ? '' : 'warning'}
-            src={player2Image}
-            id="player2" 
-            player="P2" 
-            placeholder="Enter Player 2 Name"
-            onInfoChange={handlePlayer2Change}/>
-        </div>
+                <PlayerInputCard 
+                    inputClass={nameCheck && player2 === '' ? '' : 'warning'}
+                    src={player2Image}
+                    id="player2" 
+                    player="P2" 
+                    placeholder="Enter Player 2 Name"
+                    onInfoChange={handlePlayer2Change}/>
+            </div>
             <Button 
-            onClick={onStartClick}
-            buttonText= "Let's Play"
-            buttonClass="start"
-            id="start"/>
+                onClick={onStartClick}
+                buttonText= "Let's Play"
+                buttonClass="start"
+                id="start"/>
         </div>
     )
 }
