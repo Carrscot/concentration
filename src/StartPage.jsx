@@ -38,7 +38,7 @@ function StartPage(props) {
             <div className='playerInputCards'>
 
                 <PlayerInputCard
-                    inputClass={nameCheck && player1 === '' ? '' : 'warning'}
+                    inputClass={!nameCheck && player1 === '' ? 'warning' : ''}
                     src={player1Image}
                     id="player1" 
                     player="P1" 
@@ -46,7 +46,7 @@ function StartPage(props) {
                     onInfoChange={handlePlayer1Change}/>
 
                 <PlayerInputCard 
-                    inputClass={nameCheck && player2 === '' ? '' : 'warning'}
+                    inputClass={!nameCheck && player2 === '' ? 'warning' : ''}
                     src={player2Image}
                     id="player2" 
                     player="P2" 

@@ -362,5 +362,19 @@
         "value": "KING",
         "suit": "HEARTS",
         "matched" : false
+    },
+    {
+        "code": "JR",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Joker_red_02.svg/209px-Joker_red_02.svg.png?20170127185001",
+        "value": "JOKER",
+        "suit": "NONE",
+        "matched" : false
+    },
+    {
+        "code": "JB",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Joker_black_02.svg",
+        "value": "JOKER",
+        "suit": "NONE",
+        "matched" : false
     }
 ]

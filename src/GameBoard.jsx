@@ -29,7 +29,9 @@ const GameBoard = (props) => {
             'H' : 'red',
             'D' : 'red',
             'S' : 'black',
-            'C' : 'black'
+            'C' : 'black',
+            'R' : 'joker',
+            'B' : 'joker'
         };
         return colors[cardSplit[1]] || '';
     }
