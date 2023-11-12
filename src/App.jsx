@@ -14,7 +14,7 @@ function App() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [cards, setCards] = useState(cardInfo);
-  const [gameState, setGameState] = useState('End');
+  const [gameState, setGameState] = useState('Start');
   const [winner, setWinner] = useState(player1);
 
   const shuffle = (array) => {
