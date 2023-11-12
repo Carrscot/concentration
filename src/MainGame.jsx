@@ -4,7 +4,6 @@ import PlayerCard from "./PlayerCard"
 import player1Image from './assets/player1Image.png'
 import player2Image from './assets/player2Image.png'
 import winImage from './assets/winImage.png'
-import EndGameCard from "./endGameCard"
 
 const MainGame = (props) => {
     const {
