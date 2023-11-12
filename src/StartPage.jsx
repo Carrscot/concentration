@@ -12,14 +12,15 @@ function StartPage(props) {
         player1, 
         player2,
         setGameState} = props;
-    let player1Name;
-    let player2Name;
+    const [nameCheck, setNameCheck] = useState(true);
 
     function onStartClick () {
         if(player1 ==='' || player2==='') {
-            console.log("please enter names for both palyers");
+            alert("please enter names for both palyers");
+            setNameCheck(false);
         }
         else {
+            setNameCheck(true);
             setGameState("In Progress")
         }
     }
@@ -36,6 +37,7 @@ function StartPage(props) {
         <div className='playerInputCards'>
 
             <PlayerInputCard
+            inputClass={nameCheck && player1 === '' ? '' : 'warning'}
             src={player1Image}
             id="player1" 
             player="P1" 
@@ -43,10 +45,11 @@ function StartPage(props) {
             onInfoChange={handlePlayer1Change}/>
 
             <PlayerInputCard 
+            inputClass={nameCheck && player2 === '' ? '' : 'warning'}
             src={player2Image}
             id="player2" 
             player="P2" 
-            placeholder="Enter Player 1 Name"
+            placeholder="Enter Player 2 Name"
             onInfoChange={handlePlayer2Change}/>
         </div>
             <Button 

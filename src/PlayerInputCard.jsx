@@ -7,7 +7,8 @@ const PlayerCard = (props) => {
         id, 
         placeholder, 
         value, 
-        src} = props;
+        src,
+        inputClass} = props;
 
     return (
         <div className="playerInputCard">
@@ -18,6 +19,7 @@ const PlayerCard = (props) => {
             className="playerImage"/>
 
         <InputField 
+            inputClass={inputClass}
             onInfoChange={onInfoChange} 
             type="text"
             id={player} 

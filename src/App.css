@@ -115,6 +115,10 @@ input{
   margin: 5px;
 }
 
+.warning {
+  border: 1px solid red;
+}
+
 .mainGame {
   display: flex;
   align-items: center;

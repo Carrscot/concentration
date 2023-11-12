@@ -1,10 +1,17 @@
 import React from "react";
 
 const InputField = (props) => {
-    const {type, id, placeholder, value, onInfoChange} = props;
+    const {
+        type, 
+        id, 
+        placeholder, 
+        value, 
+        onInfoChange,
+        inputClass} = props;
     return (
         <>
             <input 
+            className={inputClass}
             onChange={onInfoChange} 
             type={type} 
             id={id} 
