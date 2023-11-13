@@ -2,7 +2,7 @@
 
 Welcome to concentration! This was built to assess my skills as a developer. This version inludes all the features I was able to create within the time given for the assessment but I will be adding to it in the future when I learn more about scaling for smaller devices and how to properly integrate back end into REACT Apps.
 
-To run this web app remotely simply access it throught this link: https://concentration-virid.vercel.app/
+To run this web app remotely simply access it throught this link: https://concentration-7zpr.vercel.app/
 
 If you would like to run it locally:
 - fork the repo to your machine
