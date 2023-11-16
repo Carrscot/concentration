@@ -7,6 +7,9 @@ To run this web app remotely simply access it throught this link: https://concen
 If you would like to run it locally:
 - fork the repo to your machine
 - navigate to the directory you forked the repo into
+- Open the folder in your IDE of choice
+- Open a terminal
+- In your terminal run the command 'npm install' to install all missing node packages.
 - run the command 'npm run dev"
 - Enter http://localhost:5173/ into your browser.
 
